@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap');
+
+:root {
+    --black: #02111B;
+    --lightBlack: #525252;
+    --brown: #752D2D;
+    --beige: #F7F4E5;
+    --tbeige: #f7f4e53f;
+    --grey:#D6E5E5;
+    --tgrey: #f7f4e580;
+    --blue: #73A1B2;
+    --marron:#C56528;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Quattrocento Sans', sans-serif;
+    color: var(--black);
+    font-size: 1rem;
+}
+
+/*-----------------------------------------------Header-------------------------------------------------*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+.accessibility {
+    position: absolute;
+    left: -15000px;
+}
+
+#mainHeader, #mainFooter{
+    background-color: var(--beige);
+}
+#mainHeader {
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: grid;
+    grid-template-columns: 80px 1fr 40px;
+}
+#logoImg {
+    width: 80px;
+    padding: 5px;
+    z-index: 1000;
+    position: relative;
+}
+#mainHeader a h1 {
+    color: var(--black);
+    font-family:'Amatic SC', cursive;
+    font-size: 2em;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: var(--marron);
+}
+a:hover{
+    color: var(--brown)
+}
+#mainNav {
+    background-color: var(--beige);
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    padding-bottom: 10px;
+    display: none;
+}
+#mainNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+}
+#mainNav a{
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.5em;
+    display: block;
+    padding-left: 90px;
+}
+#mainNav a:hover{
+    color: var(--brown)
+}
+#menuToggle {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+#pageContent {
+    background: url(road-381227_1920.jpg) center center / cover no-repeat fixed;
+    padding: 100px 20px;
+    min-height: 100vh;
+}
+#pageContent h1{
+    font-size: 1.8em;
+    color: var(--black);
+    letter-spacing: .1em;
+}
+
+.text{
+    text-align: justify;
+}
+
+/*-----------------------------------------------Page d'accueil-------------------------------------------------*/
+#pageContent.home{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#pageContent.home #pictInfo {
+    background-color: var(--tgrey);
+    padding: 30px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+#pageContent.home #pictInfo h1{
+    letter-spacing: .5em;
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+#pageContent.home #pictInfo p{
+    margin: 10px 0;
+    font-size: 1em;
+}
+
+/*-----------------------------------------------Page contact-------------------------------------------------*/
+
+#pageContent.contact form{
+    border-top: solid 1px var(--black);
+    display: grid;
+}
+#pageContent.contact form > div > div {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+#pageContent.contact form label{
+    margin-bottom: 2px;
+    font-size: 1.1em;
+}
+#pageContent.contact form textarea {
+    height: 150px;
+    resize: none;
+}
+#pageContent.contact form button{
+    padding: 10px;
+    background-color: var(--lightBlack);
+    color: var(--black);
+    border: none;
+    margin-top: 0px;
+}
+#pageContent.contact form button:hover{
+    background-color: var(--brown);
+}
+#pageContent.contact form button:active{
+    background-color: var(--brown);
+}
+
+/*-----------------------------------------------A propos-------------------------------------------------*/
+
+#pageContent .text{
+    padding: 40px;
+    margin: 40px;
+}
+.text ul{
+    list-style: none;
+    font-size: .8em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 40px;
+}
+main {
+    background-color: var(--beige);
+    padding: 20px;
+}
+/*-----------------------------------------------Footer-------------------------------------------------*/
+
+#mainFooter{
+    background-color: var(--beige);
+    height: 20px;
+    width: 100%;
+    font-size: .5em;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--black);
+}
+
+/*-----------------------------------------------Media queries-------------------------------------------------*/
+
+@media screen and (min-width: 768px){
+    #menuToggle {
+        display: none;
+    }
+    #mainHeader {
+        grid-template-columns: 80px 250px 1fr;
+    }
+    #mainNav{
+        position: static;
+        background-color: transparent;
+        display: block !important;
+    }
+    #mainNav ul{
+        flex-direction: row;
+        justify-content: flex-end;
+        height: 40px;
+        align-items: center;
+    }
+    #mainNav a{
+        font-size: 1.2em;
+        padding: 0 10px;
+    }
+    #pageContent.home{
+        justify-content: flex-end;
+    }
+    #pageContent.galleries ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1024px){
+    #mainHeader {
+        grid-template-columns: 80px repeat(2, 1fr);
+    }
+    #mainHeader > h1 {
+        font-size: 1.3em;
+    }
+    #pageContent.contact form{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+    #pageContent.contact form button {
+        grid-column: span 2;
+    }
+    #pageContent.galleries ul{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #pageContent.twoCols{
+        grid-template-columns: 2fr 1fr;
+    }
+}
+@media screen and (min-width: 1200px){
+    #pageContent.galleries ul{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    #pageContent.twoCols{
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
