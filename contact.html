@@ -6,6 +6,11 @@
         <title>Tom Baronnet - Contact</title>
         <link rel="stylesheet" href="normalize.css" />
         <link rel="stylesheet" href="main.css"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
+                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" 
+                crossorigin="anonymous"></script>
+        <script src="boutonMenu.js" defer></script>
+        <script src="merci.js" defer></script>
     </head>
     <body>
         <header id="mainHeader">
@@ -23,10 +28,10 @@
             <button id="menuToggle"><img src="Icones/hamburgerDoodle.svg" alt="Ouvrir / Fermer le menu" /></button>
         </header><!--Ici se termine le #mainHeader-->
         <section id="pageContent" class="contact">
-            <main>
+            <main class='bloc'>
                 <h1>Contactez-moi</h1>
                 <p>Merci de compléter le formulaire suivant pour me contacter. Tous les champs de ce formulaire sont requis.</p>
-                <form id="frmContact" action="merci.html">
+                <form id="frmContact" novalidate>
                     <div>
                         <div>
                             <label for="fName">Prénom</label>
@@ -47,12 +52,21 @@
                             <textarea name="message" id="message" required></textarea>
                         </div>
                     </div>
-                    <button type="submit">Envoyer</button>
+                    <button id="buttonSubmit" type="submit">Envoyer</button>
                 </form>
             </main>
         </section><!--Ici se termine le #pageContent-->
         <footer id="mainFooter">
             <p>&copy; Copyright Tom Baronnet - 2021</p>
         </footer><!--Ici se termine le #mainFooter-->
+
+        <figure id="merci">
+            <div id="cadreMerci">
+                <h1>Merci</h1>
+                <p>Merci pour votre message. Je reprendai contact avec vous dans les 3 jours ouvrables.</p>
+                <p>À très bientôt</p>
+            </div>
+        </figure>
+
     </body>
 </html>

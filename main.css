@@ -174,11 +174,62 @@ a:hover{
     background-color: var(--brown);
 }
 
+#pageContent.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pageContent.contact .bloc{
+    width: 80em;
+}
+
+#merci{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#merci #cadreMerci{
+    background-color: white;
+    padding: 50px;
+    margin: 20px 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#merci.visible{
+    opacity: 1;
+    visibility: visible;
+}
+
 /*-----------------------------------------------A propos-------------------------------------------------*/
 
-#pageContent .text{
-    padding: 40px;
-    margin: 40px;
+.about{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.bloc{
+    margin: 20px;
+}
+
+#pageContent.about .text{
+    padding: 20px;
+    margin: 20px;
 }
 .text ul{
     list-style: none;
@@ -186,12 +237,14 @@ a:hover{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 40px;
+    padding-left: 0;
+    
 }
 main {
     background-color: var(--beige);
     padding: 20px;
 }
+
 /*-----------------------------------------------Footer-------------------------------------------------*/
 
 #mainFooter{
